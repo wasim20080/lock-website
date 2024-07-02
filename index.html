@@ -1,0 +1,159 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Website Lock</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Website Lock</h1>
+    <p>Enter the URL you want to lock:</p>
+    <input type="text" id="url" value="www.pw.live/study/" readonly>
+    <br><br>
+    <label for="timer">Lock for (minutes):</label>
+    <input type="number" id="timer" min="1" max="120">
+    <br><br>
+    <button onclick="lockWebsite()">Lock Website</button>
+    <p id="status"></p>
+
+    <script>
+        function lockWebsite() {
+            var url = document.getElementById('url').value;
+            var timer = document.getElementById('timer').value;
+
+            if (timer <= 0 || isNaN(timer)) {
+                document.getElementById('status').innerText = "Please enter a valid timer.";
+                return;
+            }
+
+            var lockTime = parseInt(timer) * 60000; // Convert minutes to milliseconds
+            document.getElementById('status').innerText = `Website locked for ${timer} minutes.`;
+
+            var startTime = new Date().getTime();
+            var endTime = startTime + lockTime;
+
+            setInterval(function() {
+                var currentTime = new Date().getTime();
+                if (currentTime >= endTime) {
+                    document.getElementById('status').innerText = "Lock expired.";
+                    window.location.href = "about:blank";
+                }
+            }, 1000);
+
+            window.location.href = `https://${url}`;
+        }
+    </script>
+</body>
+</html> -->
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Website Lock</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+        }
+        input[type="text"], input[type="number"] {
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            background-color: #28a745;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .button-group {
+            margin: 20px 0;
+        }
+        .button-group button {
+            background-color: #007bff;
+        }
+        .button-group button:hover {
+            background-color: #0056b3;
+        }
+        #status {
+            color: red;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Website Lock</h1>
+    <p>Enter the URL you want to lock:</p>
+    <input type="text" id="url" value="www.pw.live/study/" readonly>
+    <br><br>
+    <label for="timer">Lock for (minutes):</label>
+    <input type="number" id="timer" min="1" max="120">
+    <br><br>
+    <button onclick="lockWebsite()">Lock Website</button>
+    <p id="status"></p>
+
+    <div class="button-group">
+        <button onclick="openWebsite('https://wasim20080.github.io/NEW-BIHAR-TYRE-SERVICE/')">NBTS</button>
+        <button onclick="openWebsite('https://www.youtube.com')">YouTube</button>
+        <button onclick="openWebsite('https://wasim20080.github.io/planning/')">planner</button>
+        <button onclick="openWebsite('https://www.sonyliv.com/')">liv</button>
+    </div>
+
+    <script>
+        function lockWebsite() {
+            var url = document.getElementById('url').value;
+            var timer = document.getElementById('timer').value;
+
+            if (timer <= 0 || isNaN(timer)) {
+                document.getElementById('status').innerText = "Please enter a valid timer.";
+                return;
+            }
+
+            var lockTime = parseInt(timer) * 60000; // Convert minutes to milliseconds
+            document.getElementById('status').innerText = `Website locked for ${timer} minutes.`;
+
+            var startTime = new Date().getTime();
+            var endTime = startTime + lockTime;
+
+            setInterval(function() {
+                var currentTime = new Date().getTime();
+                if (currentTime >= endTime) {
+                    document.getElementById('status').innerText = "Lock expired.";
+                    window.location.href = "about:blank";
+                }
+            }, 1000);
+
+            window.location.href = `https://${url}`;
+        }
+
+        function openWebsite(url) {
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>
+
